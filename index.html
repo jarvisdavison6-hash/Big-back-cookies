@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eunice's Back Rd Bakery | Big Back Gourmet Cookies</title>
-  <meta name="description" content="Eunice's Back Rd Bakery — Big Back Gourmet Cookies handcrafted in Huntsville, Texas. Oversized, rich, homemade gourmet cookies & brownies." />
+  <meta name="description" content="Eunice's Back Rd Bakery — Big Back Gourmet Cookies handcrafted in Huntsville, Texas. Oversized, rich, homemade gourmet cookies & brownies by Eunice." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +28,7 @@
    
     <ul id="navLinks" class="nav-links">
       <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Eunice</a></li>
       <li><a href="#menu">Our Cookies</a></li>
       <li><a href="#order">Order Now</a></li>
     </ul>
@@ -42,7 +43,8 @@
     <div class="hero-silk-overlay"></div>
     <div class="hero-content">
       <div class="hero-image">
-        <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/IMG_1153.jpeg" alt="Eunice - Owner of Back Rd Bakery" />
+        <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/eunice-portrait.jpg" alt="Eunice - Owner and Baker of Back Rd Bakery" class="hero-portrait" />
+        <div class="image-badge">👑 The Baker</div>
       </div>
       <div class="hero-text">
         <p class="hero-hearts">💛 From Back Roads to Big Stages! 💛</p>
@@ -50,14 +52,31 @@
         <p class="hero-tagline">BACK RD BAKERY</p>
         <p class="hero-subtitle">
           Handcrafted with premium ingredients and pure indulgence. <br />
-          Order now and taste the difference that love bakes into every cookie.
+          Baked with love in Huntsville, Texas by Eunice herself.
         </p>
-        <a href="#order" class="btn-explore-menu">🍪 Order Now</a>
+        <div class="hero-cta-group">
+          <a href="#menu" class="btn-explore-menu">🍪 Explore Menu</a>
+          <a href="#order" class="btn-order-now">📞 Order Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <h2 class="section-title">Meet Eunice</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Hi, I'm Eunice! For years, I've been perfecting the art of baking the most delicious, oversized gourmet cookies right here in Huntsville, Texas.</p>
+          <p>Every cookie is handcrafted with premium ingredients and baked with love. From my kitchen to your table, you'll taste the difference that passion and quality make.</p>
+          <p>Whether it's classic flavors or creative combinations, I take pride in every batch. Order your favorites today and experience the "Big Back" difference! 🍪</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="menu" class="cookie-showcase-section">
+    <h2 class="section-title white-title">Our Cookie Collection</h2>
     <div class="cookie-showcase-container">
       <div class="cookie-grid">
        
@@ -66,7 +85,7 @@
             <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/IMG_3765.jpeg" alt="Biscoff Cookie Butter" class="cookie-avatar" />
           </div>
           <h3 class="cookie-name">Biscoff</h3>
-          <p class="cookie-description">Cookie Butter</p>
+          <p class="cookie-description">Cookie Butter Delight</p>
         </div>
 
         <div class="cookie-card">
@@ -82,7 +101,7 @@
             <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/IMG_3767.jpeg" alt="Cookies & Cream" class="cookie-avatar" />
           </div>
           <h3 class="cookie-name">Cookies & Cream</h3>
-          <p class="cookie-description">Cookies & Cream</p>
+          <p class="cookie-description">Classic Favorite</p>
         </div>
 
         <div class="cookie-card">
@@ -90,7 +109,7 @@
             <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/IMG_3768.jpeg" alt="Lemon Poundcake" class="cookie-avatar" />
           </div>
           <h3 class="cookie-name">Lemon</h3>
-          <p class="cookie-description">Poundcake</p>
+          <p class="cookie-description">Poundcake Fresh</p>
         </div>
 
         <div class="cookie-card">
@@ -98,7 +117,7 @@
             <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/IMG_3190.jpeg" alt="Strawberry Crunch" class="cookie-avatar" />
           </div>
           <h3 class="cookie-name">Strawberry</h3>
-          <p class="cookie-description">Crunch</p>
+          <p class="cookie-description">Crunch Sensation</p>
         </div>
 
         <div class="cookie-card">
@@ -106,7 +125,7 @@
             <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/IMG_5594.jpeg" alt="Chocolate Chip Pecan" class="cookie-avatar" />
           </div>
           <h3 class="cookie-name">Chocolate Chip</h3>
-          <p class="cookie-description">Pecan</p>
+          <p class="cookie-description">Pecan Paradise</p>
         </div>
 
       </div>
@@ -119,9 +138,11 @@
       <p class="order-subtitle">Tell us what you want and how many. We'll get your delicious cookies ready!</p>
       <form onsubmit="handleOrder(event)">
         <input type="text" id="orderInput" class="order-input" placeholder="What cookie(s) would you like? (e.g., 2 Biscoff, 3 Reese's)" required>
-        <button type="submit" class="order-button">📞 Send Order</button>
+        <button type="submit" class="order-button">📞 Call to Order</button>
       </form>
-      <p class="order-subtitle" style="margin-top: 2rem; font-size: 1rem;">Or call us at <strong style="color: var(--gold-bright);">832-420-6435</strong></p>
+      <div class="order-divider">OR</div>
+      <p class="order-subtitle" style="margin-top: 1.5rem;">Call us directly at <strong style="color: var(--gold-bright); font-size: 1.3rem;">832-420-6435</strong></p>
+      <p class="order-note">💌 Huntsville, Texas | Follow us on Facebook & TikTok</p>
     </div>
   </section>
 
@@ -133,6 +154,7 @@
         <a href="tel:832-420-6435" class="widget-phone-link">
           832-420-6435
         </a>
+        <p class="footer-location">Huntsville, Texas</p>
       </div>
 
       <div class="footer-widget-column">
@@ -150,7 +172,7 @@
         <div class="badge-row">
           <a href="https://cash.app/$Diva39ross" target="_blank" class="pay-handle cashapp">$ Diva39ross</a>
           <a href="sms:+18324206435" class="pay-handle zelle">Z 8324206435</a>
-          <a href="https://www.apple.com/applepay/" target="_blank" class="pay-handle applepay">Pay</a>
+          <a href="https://www.apple.com/applepay/" target="_blank" class="pay-handle applepay">🍎 Pay</a>
         </div>
       </div>
 
@@ -165,7 +187,7 @@
     </div>
 
     <div class="system-copyright-row">
-      Copyright © 2026 Eunice's Back Rd Bakery. All rights reserved. | Huntsville, Texas
+      Copyright © 2026 Eunice's Back Rd Bakery. All rights reserved. | Huntsville, Texas 🍪👑
     </div>
   </footer>
 
@@ -189,9 +211,8 @@
       event.preventDefault();
       const cookieOrder = document.getElementById('orderInput').value;
       const phoneNumber = '8324206435';
-      const message = encodeURIComponent(`Hi Eunice! I'd like to order: ${cookieOrder}`);
       
-      // Initiate phone call
+      // Initiate phone call with order info
       window.location.href = `tel:+1${phoneNumber}`;
     }
   </script>
