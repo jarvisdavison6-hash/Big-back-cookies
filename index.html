@@ -51,41 +51,45 @@
       align-items: center;
       padding: 1rem 5%;
       background: linear-gradient(to bottom, rgba(2, 8, 19, 0.98) 0%, rgba(3, 14, 34, 0.92) 100%);
-      border-bottom: 2px solid var(--gold-primary);
+      border-bottom: 3px solid var(--gold-primary);
       position: sticky;
       top: 0;
       z-index: 9999;
       flex-wrap: wrap;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
     }
 
     .nav-brand {
       display: flex;
       flex-direction: column;
       position: relative;
+      align-items: center;
     }
 
     .logo-crown {
-      font-size: 0.9rem;
+      font-size: 1.2rem;
       color: var(--gold-bright);
       position: absolute;
-      top: -12px;
-      left: 24px;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .nav-brand .name {
       font-family: var(--font-serif);
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       font-weight: 700;
       font-style: italic;
       color: var(--gold-bright);
       line-height: 1;
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
     }
 
     .nav-brand .tagline {
-      font-size: 0.7rem;
-      letter-spacing: 4px;
+      font-size: 0.75rem;
+      letter-spacing: 5px;
       color: var(--pure-white);
-      margin-top: 0.2rem;
+      margin-top: 0.3rem;
       font-weight: 700;
     }
 
@@ -101,7 +105,23 @@
       font-weight: 500;
       font-size: 0.95rem;
       letter-spacing: 0.5px;
-      transition: color 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold-bright);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     .nav-links a:hover {
@@ -111,32 +131,34 @@
     .nav-call-btn {
       background: linear-gradient(to bottom, #FFE875 0%, var(--gold-bright) 50%, var(--gold-primary) 100%);
       color: var(--solid-black);
-      padding: 0.6rem 1.5rem;
-      border-radius: 4px;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
       text-decoration: none;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-      transition: transform 0.2s ease;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
 
     .nav-call-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5);
+      border-color: rgba(255, 255, 255, 0.8);
     }
 
     .nav-call-btn .call-text {
-      font-size: 0.6rem;
+      font-size: 0.65rem;
       letter-spacing: 1px;
       line-height: 1.2;
     }
 
     .nav-call-btn .call-num {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       line-height: 1.2;
     }
 
@@ -163,14 +185,44 @@
     /* --- Silk/Velvet Blue Hero Styling --- */
     .hero-section {
       position: relative;
-      min-height: 60vh;
+      min-height: 65vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 5rem 2rem;
       background: var(--royal-blue-gradient);
-      border-bottom: 2px solid var(--gold-primary);
+      border-bottom: 3px solid var(--gold-primary);
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(20px); }
     }
 
     .hero-silk-overlay {
@@ -191,29 +243,36 @@
 
     .hero-hearts {
       font-family: var(--font-serif);
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-style: italic;
       color: var(--gold-bright);
       margin-bottom: 1.2rem;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
     }
 
     .hero-main-title {
       font-family: var(--font-serif);
-      font-size: 4.5rem;
+      font-size: 5rem;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       color: var(--gold-bright);
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.3);
+      text-shadow: 3px 3px 15px rgba(212, 175, 55, 0.5), 0 0 30px rgba(212, 175, 55, 0.2);
       margin-bottom: 1rem;
     }
 
     .hero-subtitle {
-      font-size: 1.15rem;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.95);
       margin-bottom: 2.5rem;
       font-weight: 400;
+      letter-spacing: 0.5px;
     }
 
     .btn-explore-menu {
@@ -222,25 +281,26 @@
       color: var(--solid-black);
       font-weight: 700;
       text-decoration: none;
-      padding: 0.75rem 2.8rem;
-      border-radius: 4px;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-      transition: transform 0.2s ease;
+      padding: 1rem 3.5rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s ease;
       cursor: pointer;
       border: none;
+      text-transform: uppercase;
     }
 
     .btn-explore-menu:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 10px 35px rgba(255, 215, 0, 0.5);
     }
 
     /* --- Cookie Section Horizontal Ribbon --- */
     .cookie-showcase-section {
       background-color: var(--pure-white);
-      padding: 4rem 1.5rem;
+      padding: 5rem 1.5rem;
       position: relative;
     }
 
@@ -250,8 +310,8 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 3px;
-      background-color: var(--gold-primary);
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold-primary), var(--gold-bright), var(--gold-primary));
     }
 
     .cookie-showcase-section::after {
@@ -260,8 +320,8 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 3px;
-      background-color: var(--gold-primary);
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold-primary), var(--gold-bright), var(--gold-primary));
     }
 
     .cookie-showcase-container {
@@ -272,28 +332,38 @@
     .cookie-grid {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     .cookie-card {
       text-align: center;
       color: var(--solid-black);
-      transition: transform 0.3s ease;
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
 
     .cookie-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
     }
 
     .cookie-image-wrapper {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
-      margin: 0 auto 1.2rem auto;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      background-color: #F3F4F6;
+      margin: 0 auto 1.5rem auto;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25), inset 0 0 20px rgba(255, 255, 255, 0.3);
+      background: linear-gradient(135deg, #F3F4F6 0%, #E8E9ED 100%);
       overflow: hidden;
-      border: 3px solid var(--pure-white);
+      border: 5px solid var(--pure-white);
+      position: relative;
+    }
+
+    .cookie-image-wrapper::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0) 0%, rgba(212, 175, 55, 0.1) 100%);
+      pointer-events: none;
     }
 
     .cookie-avatar {
@@ -305,31 +375,104 @@
 
     .cookie-name {
       font-family: var(--font-sans);
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: #111111;
-      margin-bottom: 0.15rem;
+      margin-bottom: 0.3rem;
     }
 
     .cookie-description {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: var(--muted-text-dark);
       font-weight: 500;
+    }
+
+    /* --- Order Section --- */
+    .order-section {
+      background: linear-gradient(135deg, var(--dark-navy) 0%, #030E22 100%);
+      padding: 4rem 2rem;
+      border-top: 3px solid var(--gold-primary);
+      border-bottom: 3px solid var(--gold-primary);
+    }
+
+    .order-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .order-title {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      color: var(--gold-bright);
+      margin-bottom: 2rem;
+      text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .order-subtitle {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2.5rem;
+    }
+
+    .order-input {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      font-size: 1.1rem;
+      border: 2px solid var(--gold-primary);
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.95);
+      color: var(--solid-black);
+      margin-bottom: 1.5rem;
+      font-family: var(--font-sans);
+      transition: all 0.3s ease;
+    }
+
+    .order-input::placeholder {
+      color: #AAA;
+    }
+
+    .order-input:focus {
+      outline: none;
+      border-color: var(--gold-bright);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .order-button {
+      background: linear-gradient(to bottom, #FFE56F 0%, var(--gold-bright) 40%, var(--gold-primary) 100%);
+      color: var(--solid-black);
+      border: none;
+      padding: 1rem 3rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .order-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
     }
 
     /* --- Golden Luxury Footer Styling --- */
     .premium-footer-section {
       background-color: #01040A;
-      padding: 3rem 2rem 1.5rem 2rem;
-      border-top: 2px solid var(--gold-primary);
+      padding: 3.5rem 2rem 2rem 2rem;
+      border-top: 3px solid var(--gold-primary);
+      box-shadow: inset 0 2px 10px rgba(212, 175, 55, 0.1);
     }
 
     .gold-inner-border-box {
       max-width: 1250px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
     }
 
     .footer-widget-column {
@@ -340,61 +483,94 @@
     }
 
     .widget-title {
-      font-size: 0.85rem;
-      letter-spacing: 2px;
+      font-size: 0.9rem;
+      letter-spacing: 3px;
       color: var(--gold-bright);
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
       font-weight: 700;
       text-transform: uppercase;
+      font-family: var(--font-serif);
+      font-style: italic;
     }
 
     .widget-phone-link {
       color: var(--gold-bright);
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       font-weight: 700;
       text-decoration: none;
-      transition: color 0.2s ease;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .widget-phone-link:hover {
       color: var(--pure-white);
+      transform: scale(1.05);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .social-link {
+      color: var(--gold-bright);
+      text-decoration: none;
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .social-link:hover {
+      color: var(--pure-white);
+      transform: scale(1.2) rotateZ(10deg);
     }
 
     .badge-row {
       display: flex;
-      gap: 0.4rem;
+      gap: 0.6rem;
       flex-wrap: wrap;
       justify-content: center;
     }
 
     .cc-badge {
       background-color: #0D1B2E;
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      color: #A0B3CE;
-      padding: 0.3rem 0.6rem;
-      font-size: 0.65rem;
+      border: 2px solid var(--gold-primary);
+      color: var(--gold-bright);
+      padding: 0.4rem 0.8rem;
+      font-size: 0.7rem;
       font-weight: 700;
-      border-radius: 2px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .cc-badge:hover {
+      background-color: var(--gold-primary);
+      color: var(--solid-black);
     }
 
     .pay-handle {
-      padding: 0.35rem 0.8rem;
-      font-size: 0.8rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
       font-weight: 700;
-      border-radius: 4px;
+      border-radius: 6px;
       color: var(--pure-white);
       cursor: pointer;
-      transition: transform 0.2s ease;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     .pay-handle:hover {
-      transform: scale(1.05);
+      transform: scale(1.1) translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
     }
 
     .pay-handle.cashapp {
       background-color: #00D632;
-      font-size: 1rem;
-      padding: 0.2rem 0.9rem;
+      font-size: 1.1rem;
+      padding: 0.4rem 1rem;
     }
 
     .pay-handle.zelle {
@@ -407,44 +583,42 @@
     }
 
     .social-text-row {
-      font-size: 0.9rem;
+      font-size: 1rem;
       color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
     }
 
     .system-copyright-row {
       text-align: center;
-      font-size: 0.75rem;
-      color: #555555;
-      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      color: #666666;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
     }
 
     /* --- Viewport Responsiveness --- */
     @media (max-width: 1100px) {
       .cookie-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        gap: 2.5rem;
       }
       .gold-inner-border-box {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
       }
     }
 
     @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-      }
-
       .hero-main-title {
-        font-size: 2.8rem;
+        font-size: 3rem;
       }
       .hero-hearts {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
       }
       #hamburger {
         display: flex;
-        order: 3;
       }
      
       .nav-links {
@@ -480,6 +654,12 @@
      
       .cookie-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+
+      .cookie-image-wrapper {
+        width: 140px;
+        height: 140px;
       }
      
       .gold-inner-border-box {
@@ -487,28 +667,30 @@
         gap: 2.5rem;
       }
 
-      .nav-call-btn {
-        order: 2;
-        margin-left: auto;
+      .order-title {
+        font-size: 2rem;
       }
     }
 
     @media (max-width: 480px) {
       .cookie-grid {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 2rem;
       }
       .nav-brand .name {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
       }
       .nav-call-btn {
-        padding: 0.5rem 0.8rem;
+        padding: 0.6rem 1rem;
       }
       .nav-call-btn .call-num {
         font-size: 0.9rem;
       }
       .hero-main-title {
         font-size: 2rem;
+      }
+      .order-title {
+        font-size: 1.8rem;
       }
     }
   </style>
@@ -546,11 +728,11 @@
       <p class="hero-hearts">💛 From Back Roads to Big Stages! 💛</p>
       <h1 class="hero-main-title">BIG BACK GOURMET COOKIES</h1>
       <p class="hero-subtitle">
-        Welcome to Eunice's handcrafted gourmet cookies in premium variety <br />
-        with quality ingredients and delicious flavors.
+        Handcrafted with premium ingredients and pure indulgence.<br />
+        Order now and taste the difference that love bakes into every cookie.
       </p>
       <div class="hero-action-container">
-        <a href="#menu" class="btn-explore-menu">EXPLORE MENU</a>
+        <a href="#order" class="btn-explore-menu">🍪 Order Now</a>
       </div>
     </div>
   </section>
@@ -611,45 +793,57 @@
     </div>
   </section>
 
-  <footer id="order" class="premium-footer-section">
+  <section id="order" class="order-section">
+    <div class="order-container">
+      <h2 class="order-title">🍪 Just Say Cookie! 🍪</h2>
+      <p class="order-subtitle">Tell us what you want and how many. We'll get your delicious cookies ready!</p>
+      <form onsubmit="handleOrder(event)">
+        <input type="text" class="order-input" placeholder="What cookie(s) would you like? (e.g., 2 Biscoff, 3 Reese's)" required>
+        <button type="submit" class="order-button">📞 Send Order</button>
+      </form>
+      <p class="order-subtitle" style="margin-top: 2rem; font-size: 1rem;">Or call us at <strong style="color: var(--gold-bright);">832-420-6435</strong></p>
+    </div>
+  </section>
+
+  <footer class="premium-footer-section">
     <div class="gold-inner-border-box">
      
       <div class="footer-widget-column">
-        <h4 class="widget-title">PLACE AN ORDER</h4>
+        <h4 class="widget-title">📞 Place An Order</h4>
         <a href="tel:832-420-6435" class="widget-phone-link">
-          <span class="phone-icon">📞</span> 832-420-6435
+          832-420-6435
         </a>
       </div>
 
       <div class="footer-widget-column">
-        <h4 class="widget-title">CREDIT CARD</h4>
+        <h4 class="widget-title">💳 We Accept</h4>
         <div class="badge-row">
-          <span class="cc-badge visa">VISA</span>
-          <span class="cc-badge mastercard">MC</span>
-          <span class="cc-badge amex">AMEX</span>
-          <span class="cc-badge discover">DISC</span>
+          <span class="cc-badge">VISA</span>
+          <span class="cc-badge">MC</span>
+          <span class="cc-badge">AMEX</span>
+          <span class="cc-badge">DISC</span>
         </div>
-      </div>
-
-      <div class="footer-widget-column">
-        <h4 class="widget-title">FOLLOW US</h4>
-        <p class="social-text-row">👤 Facebook/TikTok</p>
-        <p class="social-text-row">📸 @eunice's</p>
-      </div>
-
-      <div class="footer-widget-column">
-        <h4 class="widget-title">EASY PAY HANDLES</h4>
-        <div class="badge-row">
-          <span class="pay-handle cashapp">$</span>
-          <span class="pay-handle zelle">Z</span>
+        <div class="badge-row" style="margin-top: 0.8rem;">
+          <span class="pay-handle cashapp">$ CashApp</span>
+          <span class="pay-handle zelle">Z Zelle</span>
           <span class="pay-handle applepay">Pay</span>
         </div>
+      </div>
+
+      <div class="footer-widget-column">
+        <h4 class="widget-title">👥 Follow Our Family</h4>
+        <div class="social-links">
+          <a href="https://www.tiktok.com/@eunice's" target="_blank" class="social-link" title="TikTok">🎵</a>
+          <a href="https://www.facebook.com/eunice's" target="_blank" class="social-link" title="Facebook">👍</a>
+          <a href="https://www.instagram.com/eunice's" target="_blank" class="social-link" title="Instagram">📸</a>
+        </div>
+        <p class="social-text-row" style="margin-top: 1rem;">@eunice's</p>
       </div>
 
     </div>
 
     <div class="system-copyright-row">
-      Copyright © 2026 Eunice's Back Rd Bakery. All rights reserved.
+      Copyright © 2026 Eunice's Back Rd Bakery. All rights reserved. | Huntsville, Texas
     </div>
   </footer>
 
@@ -668,6 +862,23 @@
         hamburger.setAttribute('aria-expanded', 'false');
       });
     });
+
+    function handleOrder(event) {
+      event.preventDefault();
+      const cookieOrder = event.target.querySelector('input').value;
+      const phoneNumber = '8324206435';
+      const message = encodeURIComponent(`Hi! I'd like to order: ${cookieOrder}`);
+      
+      // Open WhatsApp, SMS, or phone call
+      const whatsappUrl = `https://wa.me/1${phoneNumber}?text=${message}`;
+      const smsUrl = `sms:+1${phoneNumber}?body=${message}`;
+      
+      // Try WhatsApp first, fallback to phone
+      window.location.href = whatsappUrl;
+      setTimeout(() => {
+        window.location.href = `tel:+1${phoneNumber}`;
+      }, 1000);
+    }
   </script>
 </body>
 </html>
