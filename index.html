@@ -185,12 +185,12 @@
     /* --- Silk/Velvet Blue Hero Styling --- */
     .hero-section {
       position: relative;
-      min-height: 65vh;
+      min-height: 70vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 5rem 2rem;
+      padding: 3rem 2rem;
       background: var(--royal-blue-gradient);
       border-bottom: 3px solid var(--gold-primary);
       overflow: hidden;
@@ -238,39 +238,64 @@
     .hero-content {
       position: relative;
       z-index: 5;
-      max-width: 1000px;
+      max-width: 1200px;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .hero-image {
+      flex: 0 0 300px;
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4), 0 0 30px rgba(212, 175, 55, 0.2);
+      border: 3px solid var(--gold-primary);
+    }
+
+    .hero-text {
+      flex: 1;
+      text-align: left;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-style: italic;
+      color: var(--gold-bright);
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     }
 
     .hero-hearts {
       font-family: var(--font-serif);
-      font-size: 2rem;
+      font-size: 1.3rem;
       font-style: italic;
       color: var(--gold-bright);
-      margin-bottom: 1.2rem;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.8; }
+      margin-bottom: 0.5rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
     }
 
     .hero-main-title {
       font-family: var(--font-serif);
-      font-size: 5rem;
+      font-size: 4rem;
       font-weight: 700;
       letter-spacing: 2px;
       color: var(--gold-bright);
       text-shadow: 3px 3px 15px rgba(212, 175, 55, 0.5), 0 0 30px rgba(212, 175, 55, 0.2);
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     .hero-subtitle {
-      font-size: 1.3rem;
-      line-height: 1.8;
+      font-size: 1.1rem;
+      line-height: 1.6;
       color: rgba(255, 255, 255, 0.95);
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       font-weight: 400;
       letter-spacing: 0.5px;
     }
@@ -281,10 +306,10 @@
       color: var(--solid-black);
       font-weight: 700;
       text-decoration: none;
-      padding: 1rem 3.5rem;
+      padding: 0.9rem 3rem;
       border-radius: 8px;
-      font-size: 1.1rem;
-      letter-spacing: 1px;
+      font-size: 1rem;
+      letter-spacing: 0.8px;
       box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
       transition: all 0.3s ease;
       cursor: pointer;
@@ -471,8 +496,8 @@
       max-width: 1250px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
     }
 
     .footer-widget-column {
@@ -484,23 +509,22 @@
 
     .widget-title {
       font-size: 0.9rem;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       color: var(--gold-bright);
       margin-bottom: 1.5rem;
       font-weight: 700;
       text-transform: uppercase;
-      font-family: var(--font-serif);
-      font-style: italic;
     }
 
     .widget-phone-link {
       color: var(--gold-bright);
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       font-weight: 700;
       text-decoration: none;
       transition: all 0.3s ease;
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 0.5rem;
     }
 
@@ -513,19 +537,23 @@
       display: flex;
       gap: 1.5rem;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     .social-link {
       color: var(--gold-bright);
       text-decoration: none;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
+      font-weight: 700;
       transition: all 0.3s ease;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .social-link:hover {
       color: var(--pure-white);
-      transform: scale(1.2) rotateZ(10deg);
+      transform: scale(1.15) rotateZ(10deg);
     }
 
     .badge-row {
@@ -540,7 +568,7 @@
       border: 2px solid var(--gold-primary);
       color: var(--gold-bright);
       padding: 0.4rem 0.8rem;
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       font-weight: 700;
       border-radius: 4px;
       transition: all 0.3s ease;
@@ -553,13 +581,16 @@
 
     .pay-handle {
       padding: 0.5rem 1rem;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 700;
       border-radius: 6px;
       color: var(--pure-white);
       cursor: pointer;
       transition: all 0.3s ease;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
     }
 
     .pay-handle:hover {
@@ -569,8 +600,8 @@
 
     .pay-handle.cashapp {
       background-color: #00D632;
-      font-size: 1.1rem;
-      padding: 0.4rem 1rem;
+      font-size: 1rem;
+      padding: 0.4rem 0.9rem;
     }
 
     .pay-handle.zelle {
@@ -583,9 +614,9 @@
     }
 
     .social-text-row {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
       font-weight: 500;
     }
 
@@ -605,17 +636,24 @@
         gap: 2.5rem;
       }
       .gold-inner-border-box {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 2.5rem;
+      }
+      .hero-content {
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .hero-text {
+        text-align: center;
       }
     }
 
     @media (max-width: 768px) {
       .hero-main-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
       }
       .hero-hearts {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
       }
       #hamburger {
         display: flex;
@@ -670,6 +708,10 @@
       .order-title {
         font-size: 2rem;
       }
+
+      .hero-image {
+        flex: 0 0 200px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -687,10 +729,13 @@
         font-size: 0.9rem;
       }
       .hero-main-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
       .order-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+      }
+      .hero-image {
+        flex: 0 0 150px;
       }
     }
   </style>
@@ -725,13 +770,17 @@
   <section id="home" class="hero-section">
     <div class="hero-silk-overlay"></div>
     <div class="hero-content">
-      <p class="hero-hearts">💛 From Back Roads to Big Stages! 💛</p>
-      <h1 class="hero-main-title">BIG BACK GOURMET COOKIES</h1>
-      <p class="hero-subtitle">
-        Handcrafted with premium ingredients and pure indulgence.<br />
-        Order now and taste the difference that love bakes into every cookie.
-      </p>
-      <div class="hero-action-container">
+      <div class="hero-image">
+        <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/IMG_1153.jpeg" alt="Eunice - Owner of Back Rd Bakery" />
+      </div>
+      <div class="hero-text">
+        <p class="hero-hearts">💛 From Back Roads to Big Stages! 💛</p>
+        <h1 class="hero-main-title">Eunice's</h1>
+        <p class="hero-tagline">BACK RD BAKERY</p>
+        <p class="hero-subtitle">
+          Handcrafted with premium ingredients and pure indulgence. <br />
+          Order now and taste the difference that love bakes into every cookie.
+        </p>
         <a href="#order" class="btn-explore-menu">🍪 Order Now</a>
       </div>
     </div>
@@ -754,7 +803,7 @@
             <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/IMG_3766.jpeg" alt="Reese's Peanut Butter" class="cookie-avatar" />
           </div>
           <h3 class="cookie-name">Reese's</h3>
-          <p class="cookie-description">Reduced Sugar</p>
+          <p class="cookie-description">Peanut Butter Cup</p>
         </div>
 
         <div class="cookie-card">
@@ -762,31 +811,31 @@
             <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/IMG_3767.jpeg" alt="Cookies & Cream" class="cookie-avatar" />
           </div>
           <h3 class="cookie-name">Cookies & Cream</h3>
-          <p class="cookie-description">Reduced Sugar</p>
+          <p class="cookie-description">Cookies & Cream</p>
         </div>
 
         <div class="cookie-card">
           <div class="cookie-image-wrapper">
             <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/IMG_3768.jpeg" alt="Lemon Poundcake" class="cookie-avatar" />
           </div>
-          <h3 class="cookie-name">Lemon Poundcake</h3>
-          <p class="cookie-description">Reduced Sugar</p>
+          <h3 class="cookie-name">Lemon</h3>
+          <p class="cookie-description">Poundcake</p>
         </div>
 
         <div class="cookie-card">
           <div class="cookie-image-wrapper">
             <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/IMG_3190.jpeg" alt="Strawberry Crunch" class="cookie-avatar" />
           </div>
-          <h3 class="cookie-name">Strawberry Crunch</h3>
-          <p class="cookie-description">Reduced Sugar</p>
+          <h3 class="cookie-name">Strawberry</h3>
+          <p class="cookie-description">Crunch</p>
         </div>
 
         <div class="cookie-card">
           <div class="cookie-image-wrapper">
             <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/IMG_5594.jpeg" alt="Chocolate Chip Pecan" class="cookie-avatar" />
           </div>
-          <h3 class="cookie-name">Chocolate Chip Pecan</h3>
-          <p class="cookie-description">Chocolate Chip</p>
+          <h3 class="cookie-name">Chocolate Chip</h3>
+          <p class="cookie-description">Pecan</p>
         </div>
 
       </div>
@@ -823,21 +872,23 @@
           <span class="cc-badge">AMEX</span>
           <span class="cc-badge">DISC</span>
         </div>
-        <div class="badge-row" style="margin-top: 0.8rem;">
-          <span class="pay-handle cashapp">$ CashApp</span>
-          <span class="pay-handle zelle">Z Zelle</span>
-          <span class="pay-handle applepay">Pay</span>
+      </div>
+
+      <div class="footer-widget-column">
+        <h4 class="widget-title">💰 Pay Handles</h4>
+        <div class="badge-row">
+          <a href="https://cash.app/$Diva39ross" target="_blank" class="pay-handle cashapp">$ Diva39ross</a>
+          <a href="sms:+18324206435" class="pay-handle zelle">Z 8324206435</a>
+          <a href="https://www.apple.com/applepay/" target="_blank" class="pay-handle applepay">Pay</a>
         </div>
       </div>
 
       <div class="footer-widget-column">
-        <h4 class="widget-title">👥 Follow Our Family</h4>
+        <h4 class="widget-title">👥 Follow Us</h4>
         <div class="social-links">
-          <a href="https://www.tiktok.com/@eunice's" target="_blank" class="social-link" title="TikTok">🎵</a>
-          <a href="https://www.facebook.com/eunice's" target="_blank" class="social-link" title="Facebook">👍</a>
-          <a href="https://www.instagram.com/eunice's" target="_blank" class="social-link" title="Instagram">📸</a>
+          <a href="https://www.facebook.com/Eunices.Back.Road.Bakery" target="_blank" class="social-link" title="Facebook">👍 Facebook</a>
+          <a href="https://www.tiktok.com/@diva46ross" target="_blank" class="social-link" title="TikTok">🎵 TikTok</a>
         </div>
-        <p class="social-text-row" style="margin-top: 1rem;">@eunice's</p>
       </div>
 
     </div>
@@ -867,17 +918,10 @@
       event.preventDefault();
       const cookieOrder = event.target.querySelector('input').value;
       const phoneNumber = '8324206435';
-      const message = encodeURIComponent(`Hi! I'd like to order: ${cookieOrder}`);
+      const message = encodeURIComponent(`Hi Eunice! I'd like to order: ${cookieOrder}`);
       
-      // Open WhatsApp, SMS, or phone call
-      const whatsappUrl = `https://wa.me/1${phoneNumber}?text=${message}`;
-      const smsUrl = `sms:+1${phoneNumber}?body=${message}`;
-      
-      // Try WhatsApp first, fallback to phone
-      window.location.href = whatsappUrl;
-      setTimeout(() => {
-        window.location.href = `tel:+1${phoneNumber}`;
-      }, 1000);
+      // Call phone
+      window.location.href = `tel:+1${phoneNumber}`;
     }
   </script>
 </body>
