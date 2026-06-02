@@ -55,6 +55,7 @@
       position: sticky;
       top: 0;
       z-index: 9999;
+      flex-wrap: wrap;
     }
 
     .nav-brand {
@@ -120,6 +121,12 @@
       font-weight: 700;
       border: 1px solid rgba(255, 255, 255, 0.4);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease;
+    }
+
+    .nav-call-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
     }
 
     .nav-call-btn .call-text {
@@ -221,6 +228,8 @@
       letter-spacing: 0.5px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
       transition: transform 0.2s ease;
+      cursor: pointer;
+      border: none;
     }
 
     .btn-explore-menu:hover {
@@ -374,6 +383,12 @@
       font-weight: 700;
       border-radius: 4px;
       color: var(--pure-white);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .pay-handle:hover {
+      transform: scale(1.05);
     }
 
     .pay-handle.cashapp {
@@ -417,6 +432,10 @@
     }
 
     @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+
       .hero-main-title {
         font-size: 2.8rem;
       }
@@ -425,6 +444,7 @@
       }
       #hamburger {
         display: flex;
+        order: 3;
       }
      
       .nav-links {
@@ -439,6 +459,7 @@
         overflow: hidden;
         transition: max-height 0.3s ease-in-out;
         border-bottom: 0 solid var(--gold-primary);
+        order: 4;
       }
      
       .nav-links.active {
@@ -465,6 +486,11 @@
         grid-template-columns: 1fr;
         gap: 2.5rem;
       }
+
+      .nav-call-btn {
+        order: 2;
+        margin-left: auto;
+      }
     }
 
     @media (max-width: 480px) {
@@ -472,11 +498,17 @@
         grid-template-columns: 1fr;
         gap: 2.5rem;
       }
+      .nav-brand .name {
+        font-size: 1.5rem;
+      }
       .nav-call-btn {
         padding: 0.5rem 0.8rem;
       }
       .nav-call-btn .call-num {
         font-size: 0.9rem;
+      }
+      .hero-main-title {
+        font-size: 2rem;
       }
     }
   </style>
@@ -514,8 +546,8 @@
       <p class="hero-hearts">💛 From Back Roads to Big Stages! 💛</p>
       <h1 class="hero-main-title">BIG BACK GOURMET COOKIES</h1>
       <p class="hero-subtitle">
-        Welcome to our cookies" gourmet cookies in ultrasonic variety <br />
-        and quality selection of selections stand magnificently.
+        Welcome to Eunice's handcrafted gourmet cookies in premium variety <br />
+        with quality ingredients and delicious flavors.
       </p>
       <div class="hero-action-container">
         <a href="#menu" class="btn-explore-menu">EXPLORE MENU</a>
@@ -529,7 +561,7 @@
        
         <div class="cookie-card">
           <div class="cookie-image-wrapper">
-            <img src="IMG_3765.jpeg" alt="Biscoff Cookie Butter" class="cookie-avatar" onerror="this.src='https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=200';" />
+            <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/IMG_3765.jpeg" alt="Biscoff Cookie Butter" class="cookie-avatar" />
           </div>
           <h3 class="cookie-name">Biscoff</h3>
           <p class="cookie-description">Cookie Butter</p>
@@ -537,7 +569,7 @@
 
         <div class="cookie-card">
           <div class="cookie-image-wrapper">
-            <img src="IMG_3766.jpeg" alt="Reese's Peanut Butter" class="cookie-avatar" onerror="this.src='https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=200';" />
+            <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/IMG_3766.jpeg" alt="Reese's Peanut Butter" class="cookie-avatar" />
           </div>
           <h3 class="cookie-name">Reese's</h3>
           <p class="cookie-description">Reduced Sugar</p>
@@ -545,7 +577,7 @@
 
         <div class="cookie-card">
           <div class="cookie-image-wrapper">
-            <img src="IMG_3767.jpeg" alt="Cookies & Cream" class="cookie-avatar" onerror="this.src='https://images.unsplash.com/photo-1558961317-1943622fe63c?w=200';" />
+            <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/IMG_3767.jpeg" alt="Cookies & Cream" class="cookie-avatar" />
           </div>
           <h3 class="cookie-name">Cookies & Cream</h3>
           <p class="cookie-description">Reduced Sugar</p>
@@ -553,7 +585,7 @@
 
         <div class="cookie-card">
           <div class="cookie-image-wrapper">
-            <img src="IMG_3768.jpeg" alt="Lemon Poundcake" class="cookie-avatar" onerror="this.src='https://images.unsplash.com/photo-1530648672449-81f6c723e2f1?w=200';" />
+            <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/IMG_3768.jpeg" alt="Lemon Poundcake" class="cookie-avatar" />
           </div>
           <h3 class="cookie-name">Lemon Poundcake</h3>
           <p class="cookie-description">Reduced Sugar</p>
@@ -561,7 +593,7 @@
 
         <div class="cookie-card">
           <div class="cookie-image-wrapper">
-            <img src="IMG_3190.jpeg" alt="Strawberry Crunch" class="cookie-avatar" onerror="this.src='https://images.unsplash.com/photo-1603532648955-039310d9ed75?w=200';" />
+            <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/IMG_3190.jpeg" alt="Strawberry Crunch" class="cookie-avatar" />
           </div>
           <h3 class="cookie-name">Strawberry Crunch</h3>
           <p class="cookie-description">Reduced Sugar</p>
@@ -569,7 +601,7 @@
 
         <div class="cookie-card">
           <div class="cookie-image-wrapper">
-            <img src="IMG_5594.jpeg" alt="Chocolate Chip Pecan" class="cookie-avatar" onerror="this.src='https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=200';" />
+            <img src="https://raw.githubusercontent.com/jarvisdavison6-hash/Big-back-cookies/main/IMG_5594.jpeg" alt="Chocolate Chip Pecan" class="cookie-avatar" />
           </div>
           <h3 class="cookie-name">Chocolate Chip Pecan</h3>
           <p class="cookie-description">Chocolate Chip</p>
@@ -601,7 +633,7 @@
 
       <div class="footer-widget-column">
         <h4 class="widget-title">FOLLOW US</h4>
-        <p class="social-text-row">👤 Facebook/tiktok</p>
+        <p class="social-text-row">👤 Facebook/TikTok</p>
         <p class="social-text-row">📸 @eunice's</p>
       </div>
 
@@ -610,14 +642,14 @@
         <div class="badge-row">
           <span class="pay-handle cashapp">$</span>
           <span class="pay-handle zelle">Z</span>
-          <span class="pay-handle applepay"> Pay</span>
+          <span class="pay-handle applepay">Pay</span>
         </div>
       </div>
 
     </div>
 
     <div class="system-copyright-row">
-      Copyright © 2026 Eunice's. All rights reserved.
+      Copyright © 2026 Eunice's Back Rd Bakery. All rights reserved.
     </div>
   </footer>
 
